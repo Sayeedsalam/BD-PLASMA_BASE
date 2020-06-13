@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plasma Request Form</title>
+</head>
+<body>
+
+<body>
+<h1>Please provide the following information</h1>
+<form action="/submit_request">
+<input type="hidden" name="hospital_id" value="{{ hospital_id }}">
+    <input type="hidden" name="bloodgroup" value="{{ bloodgroup }}">
+<span>Name: </span> <input type="text" name="name"> <br>
+<span>Address: </span> <input type="text" name="address"> <br>
+<span>Contact No: </span> <input type="tel" name="contact_no"> <br>
+<span>Contact Person Email: </span> <input type="email" name="person_email"> <br>
+<input type="submit" value="Request Plasma">
+</form>
+
+
+</body>
+</html>

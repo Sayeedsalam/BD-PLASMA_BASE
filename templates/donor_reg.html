@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Registration</title>
+</head>
+<body>
+<h1>Please provide the Donor information</h1>
+<form action="/donor_info">
+<span>Name of Donar: </span> <input type="text" name="name"/> <br>
+<span>Address: </span> <input type="text" name="address"/> <br>
+<span>Contact No: </span> <input type="tel" name="contact_no"/> <br>
+
+<span>Blood Group: </span> <input type="text" name="blood_group"/> <br>
+<span>Approximately when did you recovered from COVID-19 disease</span> <input type="date" name="date_recovered"/> <br>
+<span>You were released based on</span> <br> <input type="radio" name="test_conducted" value="yes"><label for="yes">being negative in test results.</label> <input type="radio" name="test_conducted" value="no"><label for="no">observation of symptoms only</label>  <br>
+    <span>You don't have the following diseases: <b>Hepatitis B, C, HIV, Syphilis</b></span> <br><input type="radio" name="diseases" value="yes"><label for="yes">Yes</label> <br> <input type="radio" name="diseases" value="no"><label for="no">No</label> <br>
+
+    <span>You are a </span> <br> <input type="radio" name="gender" value="Male"><label for="Male">Male</label> <br> <input type="radio" name="gender" value="Female"><label for="Female">Female</label> <br/>
+    <span>For female person, have you ever conceived </span> <br><input type="radio" name="conceived" value="yes"><label for="yes">Yes</label> <br> <input type="radio" name="conceived" value="no" default><label for="no">No</label> <br>
+
+<span>Your email is </span> <input type="email" name="donar_email"> <br>
+    <span>Special Instruction for Hospital: </span> <input type="text" name="directions"/> <br/>
+<input type="submit" value="Register as a Donor">
+</form>
+
+</body>
+</html>

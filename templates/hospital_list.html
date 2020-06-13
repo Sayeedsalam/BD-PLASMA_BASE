@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Available Hospitals</title>
+</head>
+<body>
+<h1>List of Hospitals</h1>
+<div class="results">
+    {% for hospital in hospitals %}
+        Hospital: {{ hospital["name"] }} <br/>
+        Address: {{ hospital["address"] }} <br/>
+        <a href="/select_hospital?donor_id={{donor_id}}&hospital_id={{ hospital["id_str"] }}">Select This Hospital</a>
+
+        <hr>
+    {% endfor %}
+</div>
+
+</body>
+</html>

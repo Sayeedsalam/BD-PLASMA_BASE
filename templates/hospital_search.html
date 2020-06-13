@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Available Hospitals</title>
+</head>
+<body>
+<h1>{{ message }}</h1>
+
+<div class="results">
+    {% for hospital in hospitals %}
+        Hospital: {{ hospital["name"] }} <br/>
+        Address: {{ hospital["address"] }} <br/>
+        <a href="/request_plasma?hospital_id={{ hospital["id_str"] }}&bloodgroup={{ bloodgroup }}">Select This Hospital</a>
+
+        <hr>
+    {% endfor %}
+</div>
+
+</body>
+</html>
