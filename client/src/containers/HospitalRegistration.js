@@ -20,7 +20,7 @@ import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -161,9 +161,6 @@ export default function SignUp() {
                 autoComplete="shipping country"
               />
             </Grid>                        
-            
-            
-            
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
