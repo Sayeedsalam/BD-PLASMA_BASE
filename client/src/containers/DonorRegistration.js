@@ -38,8 +38,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function SignUp() {
   const classes = useStyles();
+  const [firstName, setFirstName] = React.useState('');
+  const [lastName, setLastName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [address1, setAddress1] = React.useState('');
+  const [address2, setAddress2] = React.useState('');
+  const [city, setCity] = React.useState('');
+  const [state, setState] = React.useState('');
+  const [zip, setZip] = React.useState('');
+  const [country, setCountry] = React.useState('');
+  const [recoveryDate, setRecoveryDate] = React.useState('');
+  const [gender, setGender] = React.useState('');
+  const [conceived, setConceived] = React.useState('');
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log( 'Email:', email, 'Password: ', firstName); 
+   // You should see email and password in console.
+   // ..code to submit form to backend here...
+  }  
 
   return (
     <Container component="main" maxWidth="sm">>
@@ -51,7 +71,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Donor Registration
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit = {handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -63,6 +83,8 @@ export default function SignUp() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                onInput={ e=>setFirstName(e.target.value)}
+                value={firstName}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -74,6 +96,8 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                onInput={ e=>setLastName(e.target.value)}
+                value={lastName}
               />
             </Grid>
             <Grid item xs={12}>
@@ -85,6 +109,8 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onInput={ e=>setEmail(e.target.value)}
+                value={email}
               />
             </Grid>
             <Grid item xs={12}>
@@ -96,6 +122,8 @@ export default function SignUp() {
                 label="Address line 1"
                 fullWidth
                 autoComplete="shipping address-line1"
+                onInput={ e=>setAddress1(e.target.value)}
+                value={address1}
               />
             </Grid>
             <Grid item xs={12}>
@@ -106,6 +134,8 @@ export default function SignUp() {
                 label="Address line 2"
                 fullWidth
                 autoComplete="shipping address-line2"
+                onInput={ e=>setAddress2(e.target.value)}
+                value={address2}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -117,6 +147,8 @@ export default function SignUp() {
                 label="City"
                 fullWidth
                 autoComplete="shipping address-level2"
+                onInput={ e=>setCity(e.target.value)}
+                value={city}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -125,7 +157,9 @@ export default function SignUp() {
                 id="state"
                 name="state"
                 label="State/Province/Region"
-                fullWidth 
+                fullWidth
+                onInput={ e=>setState(e.target.value)}
+                value={state}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -137,6 +171,8 @@ export default function SignUp() {
                 label="Zip / Postal code"
                 fullWidth
                 autoComplete="shipping postal-code"
+                onInput={ e=>setZip(e.target.value)}
+                value={zip}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -148,6 +184,8 @@ export default function SignUp() {
                 label="Country"
                 fullWidth
                 autoComplete="shipping country"
+                onInput={ e=>setCountry(e.target.value)}
+                value={country}
               />
             </Grid>            
             <Grid item xs ={12}>
@@ -164,6 +202,8 @@ export default function SignUp() {
                   InputLabelProps={{
                     shrink: true,
                   }}
+                  onInput={ e=>setRecoveryDate(e.target.value)}
+                  value={recoveryDate}
                 />
             </Grid>
             <Grid item xs={12}>
@@ -172,6 +212,8 @@ export default function SignUp() {
                   <Select
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-outlined"
+                    onInput={ e=>setGender(e.target.value)}
+                    value={gender}
                   >
                     <MenuItem>Male</MenuItem>
                     <MenuItem>Female</MenuItem>
@@ -185,6 +227,8 @@ export default function SignUp() {
                   labelId="demo-simple-select-outlined-label"
                   id="demo-simple-select-outlined"
                   label="Conceived"
+                  onInput={ e=>setConceived(e.target.value)}
+                  value={conceived}
                 >
                   <MenuItem>Yes</MenuItem>
                   <MenuItem>No</MenuItem>
